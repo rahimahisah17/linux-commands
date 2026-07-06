@@ -502,3 +502,70 @@ The `cat` command displays the contents of one or more text files. It can also c
 - Accidentally overwriting a file when using `>`.
 
 > 💡 **Tip:** Use `cat` for small files. For long files, `less` provides a much better reading experience.
+
+# less
+
+## Purpose
+
+The `less` command is used to view the contents of a text file one page at a time without loading the entire file into memory.
+
+## Syntax
+
+```bash
+less [file_name]
+```
+
+## Common Options
+
+| Option | Description |
+|---------|-------------|
+| `-N` | Displays line numbers. |
+| `+G` | Opens the file at the last line. |
+| `+/text` | Opens the file at the first occurrence of the specified text. |
+
+### Examples
+
+```bash
+less notes.txt
+less -N notes.txt
+less +G notes.txt
+less +/Linux notes.txt
+```
+
+## Sample Output
+
+```text
+Linux Commands
+File Management
+Git Basics
+```
+
+## Screenshot
+
+![less command](../images/less-command.png)
+
+## Explanation
+
+The `less` command allows you to scroll through large text files page by page. You can move forward, backward, search for text, and quit without modifying the file.
+
+## Real-World Use Cases
+
+- Read large log files.
+- View configuration files.
+- Search for text within long documents.
+- Inspect command output without opening an editor.
+
+## Key Takeaways
+
+- `less` is ideal for large files.
+- Press **Space** to move forward one page.
+- Press **b** to move backward.
+- Press **/** to search.
+- Press **q** to quit.
+
+## Common Mistakes
+
+- Forgetting to press `q` to exit.
+- Using `cat` for very large files instead of `less`.
+
+> 💡 **Tip:** `less` is one of the most frequently used commands by Linux administrators because it makes reading long files fast and efficient.
