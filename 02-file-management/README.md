@@ -60,9 +60,6 @@ $ ls
 
 ## Screenshot
 
-> *Add a screenshot after demonstrating the `mkdir` command and save it as `mkdir-command.png` in the `images` folder.*
-
-
 ![mkdir command](../images/mkdir-command.png)
 
 ## Explanation
@@ -133,8 +130,6 @@ notes.txt
 ```
 
 ## Screenshot
-
-> *Add a screenshot after demonstrating the `touch` command and save it as `touch-command.png` in the `images` folder.*
 
 ![touch command](../images/touch-command.png)
 
@@ -216,8 +211,6 @@ notes.txt  notes-copy.txt
 
 ## Screenshot
 
-> *Add a screenshot after demonstrating the `cp` command and save it as `cp-command.png` in the `images` folder.*
-
 ![cp command](../images/cp-command.png)
 
 ## Explanation
@@ -288,8 +281,6 @@ notes.txt
 ```
 
 ## Screenshot
-
-> *Add a screenshot after demonstrating the `mv` command and save it as `mv-command.png` in the `images` folder.*
 
 ![mv command](../images/mv-command.png)
 

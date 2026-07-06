@@ -105,9 +105,6 @@ ls
 
 ## Screenshot
 
-> *Add a screenshot after running the `ls` command and save it as `ls-command.png` in the `images` folder.*
-
-markdown
 ![ls command](../images/ls-command.png)
 
 
@@ -189,9 +186,6 @@ pwd
 
 ## Screenshot
 
-> *Add a screenshot after demonstrating the `cd` command and save it as `cd-command.png` in the `images` folder.*
-
-markdown
 ![cd command](../images/cd-command.png)
 
 ## Explanation
