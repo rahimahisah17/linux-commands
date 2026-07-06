@@ -307,3 +307,72 @@ The `mv` command moves files or directories to a new location. If the destinatio
 - Moving a file into the wrong directory by specifying the wrong destination.
 - Accidentally overwriting an existing file with the same name.
 - Forgetting that `mv` removes the file from its original location.
+
+# rm
+
+## Purpose
+
+The `rm` (Remove) command is used to permanently delete files and directories in Linux. Unlike deleting files through a graphical interface, files removed with `rm` are not moved to a Recycle Bin.
+
+## Syntax
+
+```bash
+rm [options] [file_name]
+```
+
+## Common Options
+
+| Option | Description |
+|---------|-------------|
+| `-i` | Prompts for confirmation before deleting a file. |
+| `-r` | Removes directories and their contents recursively. |
+| `-f` | Forces deletion without prompting for confirmation. |
+| `-v` | Displays each file or directory as it is removed. |
+
+### Examples
+
+```bash
+rm notes.txt
+rm -i notes.txt
+rm -v notes.txt
+rm -r projects
+rm -rv projects
+```
+
+## Sample Output
+
+```text
+removed 'notes.txt'
+removed 'projects/file1.txt'
+removed directory 'projects'
+```
+
+## Screenshot
+
+![rm command](../images/rm-command.png)
+
+## Explanation
+
+The `rm` command permanently removes files and directories. Use the `-i` option when you want confirmation before deleting files, and the `-r` option when deleting directories. The `-v` option displays each item as it is removed, making it easier to verify what was deleted.
+
+## Real-World Use Cases
+
+- Delete temporary files after completing a task.
+- Remove old project directories.
+- Clean up log files or unnecessary data.
+- Delete backup files that are no longer needed.
+
+## Key Takeaways
+
+- `rm` permanently deletes files.
+- Use `-r` to delete directories.
+- Use `-i` for safer file deletion.
+- Use `-v` to display deleted files.
+
+## Common Mistakes
+
+- Using `rm` instead of `rmdir` when deleting an empty directory.
+- Deleting files without confirming the correct path.
+- Using `rm -rf` carelessly.
+
+> 💡 **Pro Tip:** Before deleting multiple files or directories, run `ls` to verify you're in the correct location.
