@@ -375,4 +375,64 @@ The `rm` command permanently removes files and directories. Use the `-i` option 
 - Deleting files without confirming the correct path.
 - Using `rm -rf` carelessly.
 
-> 💡 **Pro Tip:** Before deleting multiple files or directories, run `ls` to verify you're in the correct location.
+> 💡 **Tip:** Before deleting multiple files or directories, run `ls` to verify you're in the correct location.
+
+# rmdir
+
+## Purpose
+
+The `rmdir` (Remove Directory) command is used to delete empty directories in Linux. It only works if the directory contains no files or subdirectories.
+
+## Syntax
+
+```bash
+rmdir [directory_name]
+```
+
+## Common Options
+
+| Option | Description |
+|---------|-------------|
+| `-p` | Removes the specified directory and its empty parent directories. |
+| `-v` | Displays a message for each directory removed. |
+
+### Examples
+
+```bash
+rmdir empty-folder
+rmdir -v empty-folder
+rmdir -p projects/linux/scripts
+```
+
+## Sample Output
+
+```text
+rmdir: removing directory, 'empty-folder'
+```
+
+## Screenshot
+
+![rmdir command](../images/rmdir-command.png)
+
+## Explanation
+
+The `rmdir` command removes only empty directories. If the directory contains files or subdirectories, the command will fail. Use `rm -r` instead when you need to remove directories that are not empty.
+
+## Real-World Use Cases
+
+- Delete empty folders after cleaning up a project.
+- Remove unused directory structures.
+- Clean up temporary directories after moving files.
+
+## Key Takeaways
+
+- `rmdir` removes only empty directories.
+- Use `-p` to remove empty parent directories as well.
+- Use `-v` to display removed directories.
+
+## Common Mistakes
+
+- Trying to remove a directory that contains files.
+- Confusing `rmdir` with `rm -r`.
+
+> 💡 **Tip:** If `rmdir` reports that a directory is not empty, run `ls` to check its contents before deciding whether to use `rm -r`.
