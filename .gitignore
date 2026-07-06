@@ -1,0 +1,14 @@
+# Practice workspace
+labs/
+
+# Optional sandbox for experiments
+sandbox/
+
+# Temporary files
+*.tmp
+
+# macOS system files
+.DS_Store
+
+# Windows Explorer thumbnail cache
+Thumbs.db
