@@ -70,7 +70,27 @@ The `ls` (List) command displays the contents of a directory. It allows you to v
 ```bash
 ls
 ```
+## Common Options
 
+| Option | Description |
+|---------|-------------|
+| `-l` | Displays files and directories in a detailed (long) format. |
+| `-a` | Shows all files, including hidden files (those beginning with `.`). |
+| `-h` | Displays file sizes in a human-readable format (KB, MB, GB). Used together with `-l`. |
+| `-R` | Lists directories and their contents recursively. |
+
+### Examples
+
+```bash
+ls -l
+ls -a
+ls -lh
+ls -la
+ls -lah
+ls -R
+```
+
+> 💡 **Pro Tip:** `ls -lah` is one of the most commonly used command combinations because it displays hidden files, detailed information, and human-readable file sizes all at once.
 ## Example
 
 ```bash
