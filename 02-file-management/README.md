@@ -222,3 +222,82 @@ The `cp` command copies files or directories without removing the original. When
 - The original file or directory remains unchanged.
 - Use `-r` to copy directories.
 - Multiple files can be copied into a destination directory in a single command.
+
+---
+
+# `mv`
+
+## Purpose
+
+The `mv` (Move) command is used to move files or directories from one location to another. It is also used to rename files and directories.
+
+## Syntax
+
+```bash
+mv [source] [destination]
+```
+
+## Examples
+
+### Move a file to another directory
+
+```bash
+mv notes.txt labs/
+```
+
+### Rename a file
+
+```bash
+mv notes.txt meeting-notes.txt
+```
+
+### Move multiple files into a directory
+
+```bash
+mv file1.txt file2.txt labs/
+```
+
+### Rename a directory
+
+```bash
+mv projects cloud-projects
+```
+
+## Sample Output
+
+```text
+$ mv notes.txt labs/
+
+$ ls labs
+notes.txt
+```
+
+## Screenshot
+
+> *Add a screenshot after demonstrating the `mv` command and save it as `mv-command.png` in the `images` folder.*
+
+![mv command](../images/mv-command.png)
+
+## Explanation
+
+The `mv` command moves files or directories to a new location. If the destination is a filename instead of a directory, `mv` renames the file or directory instead of moving it.
+
+## Real-World Use Cases
+
+- Organize files into project folders.
+- Rename files to more meaningful names.
+- Move completed work into archive folders.
+- Reorganize project directories.
+
+## Key Takeaways
+
+- `mv` stands for **Move**.
+- It moves files and directories.
+- It is also used to rename files and directories.
+- Unlike `cp`, it does **not** leave the original behind.
+
+## 💡 Common Mistakes
+
+- Moving a file into the wrong directory by specifying the wrong destination.
+- Accidentally overwriting an existing file with the same name.
+- Forgetting that `mv` removes the file from its original location.
