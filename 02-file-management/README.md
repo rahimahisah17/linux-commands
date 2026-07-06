@@ -436,3 +436,69 @@ The `rmdir` command removes only empty directories. If the directory contains fi
 - Confusing `rmdir` with `rm -r`.
 
 > 💡 **Tip:** If `rmdir` reports that a directory is not empty, run `ls` to check its contents before deciding whether to use `rm -r`.
+
+# cat
+
+## Purpose
+
+The `cat` (Concatenate) command is used to display, create, and combine the contents of text files in Linux.
+
+## Syntax
+
+```bash
+cat [options] [file_name]
+```
+
+## Common Options
+
+| Option | Description |
+|---------|-------------|
+| `-n` | Displays line numbers for all lines. |
+| `-b` | Displays line numbers for non-empty lines only. |
+| `-E` | Displays a `$` at the end of each line. |
+
+### Examples
+
+```bash
+cat notes.txt
+cat -n notes.txt
+cat file1.txt file2.txt
+cat file1.txt file2.txt > combined.txt
+```
+
+## Sample Output
+
+```text
+Linux Commands
+File Management
+Git Basics
+```
+
+## Screenshot
+
+![cat command](../images/cat-command.png)
+
+## Explanation
+
+The `cat` command displays the contents of one or more text files. It can also combine multiple files into a new file using output redirection (`>`).
+
+## Real-World Use Cases
+
+- View the contents of a text file.
+- Combine multiple text files into one.
+- Quickly verify configuration files.
+- Display log or notes files.
+
+## Key Takeaways
+
+- `cat` displays file contents.
+- `cat -n` adds line numbers.
+- Multiple files can be displayed together.
+- Output can be redirected into a new file.
+
+## Common Mistakes
+
+- Using `cat` to read very large files instead of `less`.
+- Accidentally overwriting a file when using `>`.
+
+> 💡 **Tip:** Use `cat` for small files. For long files, `less` provides a much better reading experience.
