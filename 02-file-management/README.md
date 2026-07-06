@@ -169,6 +169,21 @@ The `cp` (Copy) command is used to copy files and directories from one location 
 ```bash
 cp [source] [destination]
 ```
+## Common Options
+
+| Option | Description |
+|---------|-------------|
+| `-r` | Copies directories and their contents recursively. |
+| `-i` | Prompts before overwriting an existing file. |
+| `-v` | Displays each file as it is copied. |
+
+### Examples
+
+```bash
+cp -v notes.txt notes-copy.txt
+cp -r projects projects-backup
+cp -i report.txt backup/
+```
 
 ## Examples
 
