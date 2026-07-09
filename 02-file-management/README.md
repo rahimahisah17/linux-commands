@@ -569,3 +569,130 @@ The `less` command allows you to scroll through large text files page by page. Y
 - Using `cat` for very large files instead of `less`.
 
 > 💡 **Tip:** `less` is one of the most frequently used commands by Linux administrators because it makes reading long files fast and efficient.
+
+# head Command
+
+## Purpose
+
+The `head` command displays the first part of a file. By default, it shows the first **10 lines**, making it useful for quickly previewing the contents of large files without opening the entire file.
+
+## Syntax
+
+```bash
+head [OPTION]... [FILE]...
+```
+
+## Common Options
+
+| Option | Description |
+|---------|-------------|
+| `-n N` | Displays the first **N** lines of a file. |
+
+## Examples
+
+```bash
+head numbers.txt
+```
+
+Displays the first 10 lines of `numbers.txt`.
+
+```bash
+head -n 5 numbers.txt
+```
+
+Displays the first 5 lines.
+
+```bash
+head -n 2 numbers.txt
+```
+
+Displays the first 2 lines.
+
+## Sample Output
+
+See the screenshot below.
+
+![head Command](../images/head-command.png)
+
+## Real-World Use Cases
+
+- Preview the beginning of a log file.
+- Verify the contents of a newly created file.
+- Check the first few rows of a CSV or text file.
+- Inspect configuration files without opening the entire file.
+
+## Key Takeaways
+
+- `head` displays the beginning of a file.
+- By default, it displays the first **10 lines**.
+- Use `-n` to specify the exact number of lines to display.
+
+## Common Mistakes
+
+- Forgetting to specify the filename.
+- Assuming `head` displays the entire file instead of just the first few lines.
+
+## Pro Tip
+
+Use `head` together with `tail` to quickly inspect both the beginning and the end of large files.
+
+# tail Command
+
+## Purpose
+
+The `tail` command displays the last part of a file. By default, it shows the last **10 lines**, making it useful for monitoring log files and viewing the most recent entries.
+
+## Syntax
+
+```bash
+tail [OPTION]... [FILE]...
+```
+
+## Common Options
+
+| Option | Description |
+|---------|-------------|
+| `-n N` | Displays the last **N** lines of a file. |
+
+## Examples
+
+```bash
+tail numbers.txt
+```
+
+Displays the last 10 lines of `numbers.txt`.
+
+```bash
+tail -n 5 numbers.txt
+```
+
+Displays the last 5 lines.
+
+
+## Sample Output
+
+See the screenshot below.
+
+![tail Command](../images/tail-command.png)
+
+## Real-World Use Cases
+
+- View the latest entries in a log file.
+- Monitor application or server logs.
+- Check the end of a text or configuration file.
+- Verify recently added data in a file.
+
+## Key Takeaways
+
+- `tail` displays the end of a file.
+- By default, it displays the last **10 lines**.
+- Use `-n` to specify the exact number of lines to display.
+
+## Common Mistakes
+
+- Forgetting to specify the filename.
+- Confusing `tail` with `head`, which displays the beginning of a file.
+
+## Pro Tip
+
+Use `tail -f` to continuously monitor a log file in real time as new lines are added.
