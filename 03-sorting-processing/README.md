@@ -91,3 +91,106 @@ ls | wc -l
 ```
 
 This counts the number of items in the current directory.
+
+# sort Command
+
+## Purpose
+
+The `sort` command arranges the lines of a text file in a specific order. By default, it sorts alphabetically, but it can also sort numerically, in reverse order, or remove duplicate lines.
+
+## Syntax
+
+```bash
+sort [OPTION]... [FILE]
+```
+
+## Common Options
+
+| Option | Description |
+|---------|-------------|
+| `-r` | Sorts in reverse (descending) order. |
+| `-n` | Sorts numerically instead of alphabetically. |
+| `-u` | Sorts the lines and removes duplicate entries. |
+
+## Examples
+
+### Sort alphabetically
+
+```bash
+sort fruits.txt
+```
+
+Sorts the contents of the file in ascending alphabetical order.
+
+### Sort in reverse order
+
+```bash
+sort -r fruits.txt
+```
+
+Displays the lines in reverse alphabetical order.
+
+### Sort numerically
+
+```bash
+sort -n fruits.txt
+```
+
+Treats numeric values as numbers instead of text, producing the correct numeric order.
+
+### Sort and remove duplicates
+
+```bash
+sort -u fruits.txt
+```
+
+Sorts the file and removes duplicate lines.
+
+## Sample Output
+
+See the screenshot below.
+
+![sort Command](../images/sort-command.png)
+
+## Real-World Use Cases
+
+- Sort names, usernames, or email addresses alphabetically.
+- Arrange numerical data such as scores or IDs.
+- Remove duplicate entries from datasets.
+- Prepare data before using commands like `uniq`.
+
+## Key Takeaways
+
+- By default, `sort` performs an alphabetical sort.
+- Use `-n` when sorting numbers.
+- Use `-r` to reverse the sorting order.
+- Use `-u` to sort while removing duplicate lines.
+
+## Common Mistakes
+
+- Forgetting that `sort` treats numbers as text unless `-n` is used.
+- Assuming `sort -u` only removes duplicates. It also sorts the data.
+
+## Pro Tip
+
+You can combine `sort` with other commands. For example:
+
+```bash
+sort fruits.txt | wc -l
+```
+
+Counts the number of sorted lines.
+
+Or:
+
+```bash
+sort fruits.txt | uniq
+```
+
+Although this works, using:
+
+```bash
+sort -u fruits.txt
+```
+
+is shorter and more efficient because it sorts and removes duplicates in a single command.
