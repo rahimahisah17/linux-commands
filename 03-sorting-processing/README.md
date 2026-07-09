@@ -194,3 +194,84 @@ sort -u fruits.txt
 ```
 
 is shorter and more efficient because it sorts and removes duplicates in a single command.
+
+# uniq Command
+
+## Purpose
+
+The `uniq` command filters out or reports repeated lines in a text file. It only detects **consecutive (adjacent)** duplicate lines, which is why it is commonly used together with the `sort` command.
+
+## Syntax
+
+```bash
+uniq [OPTION]... [FILE]
+```
+
+## Common Options
+
+| Option | Description |
+|---------|-------------|
+| `-c` | Displays the number of occurrences of each consecutive line. |
+| `-d` | Displays only duplicate lines. |
+| `-u` | Displays only unique (non-duplicate) lines. |
+
+## Examples
+
+### Remove consecutive duplicate lines
+
+```bash
+uniq names.txt
+```
+
+Removes only adjacent duplicate lines.
+
+### Sort the file and remove all duplicates
+
+```bash
+sort names.txt | uniq
+```
+
+Sorts the file first, then removes all duplicate entries.
+
+### Count duplicate occurrences
+
+```bash
+sort names.txt | uniq -c
+```
+
+Displays the number of times each unique entry appears.
+
+## Sample Output
+
+See the screenshot below.
+
+![uniq Command](../images/uniq-command.png)
+
+## Real-World Use Cases
+
+- Remove duplicate usernames from system reports.
+- Count repeated IP addresses in web server logs.
+- Identify duplicate entries in configuration files.
+- Generate a list of unique server names or hostnames.
+
+## Key Takeaways
+
+- `uniq` only removes **adjacent** duplicate lines.
+- For complete duplicate removal, use `sort` before `uniq`.
+- The `-c` option counts how many times each entry appears.
+
+## Common Mistakes
+
+- Assuming `uniq` removes every duplicate in a file.
+- Forgetting to sort the file before using `uniq`.
+- Expecting `uniq` to detect duplicates that are separated by other lines.
+
+## Pro Tip
+
+To count how many times each IP address appears in a server log:
+
+```bash
+sort access.log | uniq -c
+```
+
+This is a common technique used by Linux and DevOps engineers to analyze log files and identify repeated events.
