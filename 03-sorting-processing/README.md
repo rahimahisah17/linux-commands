@@ -275,3 +275,101 @@ sort access.log | uniq -c
 ```
 
 This is a common technique used by Linux and DevOps engineers to analyze log files and identify repeated events.
+
+# cut Command
+
+## Purpose
+
+The `cut` command extracts specific columns or fields from a file or command output. It is commonly used to retrieve selected information from structured text files such as CSV files, log files, and reports.
+
+## Syntax
+
+```bash
+cut [OPTION]... [FILE]
+```
+
+## Common Options
+
+| Option | Description |
+|---------|-------------|
+| `-d` | Specifies the field delimiter. |
+| `-f` | Specifies the field(s) to extract. |
+
+## Examples
+
+### Extract the first column (VM Names)
+
+```bash
+cut -d "," -f1 azure-vms.csv
+```
+
+Displays only the virtual machine names.
+
+### Extract the IP addresses
+
+```bash
+cut -d "," -f2 azure-vms.csv
+```
+
+Displays only the IP addresses.
+
+### Extract the Azure regions
+
+```bash
+cut -d "," -f3 azure-vms.csv
+```
+
+Displays only the deployment regions.
+
+### Extract multiple columns
+
+```bash
+cut -d "," -f1,2 azure-vms.csv
+```
+
+Displays both the VM names and their IP addresses.
+
+### Extract the environment
+
+```bash
+cut -d "," -f4 azure-vms.csv
+```
+
+Displays the environment (Production, Staging, Management).
+
+## Sample Output
+
+See the screenshot below.
+
+![cut Command](../images/cut-command.png)
+
+## Real-World Use Cases
+
+- Extract VM names from Azure inventory exports.
+- Retrieve only IP addresses from infrastructure reports.
+- Filter selected columns from CSV files.
+- Prepare data for automation scripts.
+- Process cloud resource inventories without opening spreadsheet software.
+
+## Key Takeaways
+
+- `cut` extracts specific fields from structured text.
+- Use `-d` to define the delimiter.
+- Use `-f` to specify one or more fields.
+- Multiple fields can be extracted by separating them with commas.
+
+## Common Mistakes
+
+- Forgetting to specify the correct delimiter.
+- Using spaces instead of commas when working with CSV files.
+- Using `cut` on data that isn't consistently structured.
+
+## Pro Tip
+
+You can combine `cut` with other commands. For example:
+
+```bash
+cut -d "," -f4 azure-vms.csv | sort | uniq -c
+```
+
+This counts how many virtual machines are deployed in each environment.
