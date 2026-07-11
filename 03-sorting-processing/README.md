@@ -420,6 +420,17 @@ echo "a1b2c3d4" | tr -d '0-9'
 
 Deletes all numbers from the input.
 
+```bash
+echo "Linux     commands     are     fun" | tr -s ' '
+```
+
+Replaces multiple consecutive spaces with a single space.
+
+Output:
+
+```text
+Linux commands are fun
+```
 ---
 
 ## Sample Output
@@ -472,3 +483,97 @@ echo "hello world" | tr ' ' '-'
 ```
 
 This makes `tr` extremely useful in shell pipelines.
+
+# tee Command
+
+## Purpose
+
+The **`tee`** command reads input from standard input and writes it to both the terminal and one or more files simultaneously. It is commonly used to save command output while still displaying it on the screen.
+
+---
+
+## Syntax
+
+```bash
+tee [OPTION]... [FILE]...
+```
+
+---
+
+## Common Options
+
+| Option | Description |
+|---------|-------------|
+| `-a` | Append to the file instead of overwriting it |
+| `-i` | Ignore interrupt signals (`Ctrl + C`) |
+
+---
+
+## Examples
+
+```bash
+echo "Linux is awesome" | tee output.txt
+```
+
+Displays the text on the terminal and writes it to **output.txt**.
+
+```bash
+cat output.txt
+```
+
+Displays the contents of **output.txt**.
+
+```bash
+echo "Learning Linux" | tee -a output.txt
+```
+
+Appends the text to **output.txt** instead of replacing its contents.
+
+---
+
+## Sample Output
+
+See the screenshot below.
+
+![tee command demonstration](../images/tee-command.png)
+
+---
+
+## Real-World Use Cases
+
+- Save command output while viewing it in the terminal.
+- Log terminal output to a file.
+- Create reports while monitoring command execution.
+- Debug scripts by capturing command output.
+
+---
+
+## Key Takeaways
+
+- `tee` writes output to both the terminal and a file.
+- By default, `tee` overwrites the destination file.
+- Use the `-a` option to append instead of overwrite.
+- `tee` is commonly used in shell pipelines.
+
+---
+
+## Common Mistakes
+
+- Forgetting that `tee` overwrites files by default.
+- Using `tee` without a filename when intending to save the output.
+- Forgetting the `-a` option when you want to preserve existing file contents.
+
+---
+
+## 💡 Pro Tip
+
+Use `tee` with pipelines to save command output while continuing to process it.
+
+Example:
+
+```bash
+ls -l | tee files.txt | wc -l
+```
+
+This saves the directory listing to **files.txt** while simultaneously counting the number of lines.
+```
