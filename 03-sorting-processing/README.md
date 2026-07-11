@@ -431,7 +431,9 @@ Output:
 ```text
 abcd
 ```
+### Screenshot
 
+![tr command](../images/tr-command.png)
 ---
 
 ## Common Options
