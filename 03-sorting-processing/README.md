@@ -373,3 +373,105 @@ cut -d "," -f4 azure-vms.csv | sort | uniq -c
 ```
 
 This counts how many virtual machines are deployed in each environment.
+
+# tr Command
+
+## Purpose
+
+The `tr` command translates, replaces, or deletes characters from standard input.
+
+---
+
+## Syntax
+
+```bash
+tr [OPTION] SET1 [SET2]
+```
+
+---
+
+## Examples
+
+### Convert lowercase to uppercase
+
+```bash
+cat tr.txt | tr 'a-z' 'A-Z'
+```
+
+Output:
+
+```text
+LINUX COMMANDS
+```
+
+---
+
+### Replace spaces with hyphens
+
+```bash
+echo "cloud engineer" | tr ' ' '-'
+```
+
+Output:
+
+```text
+cloud-engineer
+```
+
+---
+
+### Delete numbers
+
+```bash
+echo "a1b2c3d4" | tr -d '0-9'
+```
+
+Output:
+
+```text
+abcd
+```
+
+---
+
+## Common Options
+
+| Option | Description |
+|---------|-------------|
+| `-d` | Delete characters |
+| `-s` | Squeeze repeated characters |
+
+---
+
+## Real-World Uses
+
+- Convert text to uppercase or lowercase.
+- Replace delimiters (spaces, commas, tabs).
+- Remove unwanted characters from data.
+- Clean text before processing.
+
+---
+
+## Key Takeaways
+
+- `tr` works with **standard input**, not files directly.
+- It translates, replaces, or deletes characters.
+- It is commonly combined with commands like `cat`, `echo`, and pipes (`|`).
+
+---
+
+## 💡 Pro Tip
+
+The `tr` command **does not read files directly**. It processes **standard input**, so you'll usually use it together with commands like `cat`, `echo`, or pipes (`|`).
+
+Example:
+
+```bash
+cat filename.txt | tr 'a-z' 'A-Z'
+```
+
+or
+
+```bash
+echo "hello world" | tr ' ' '-'
+```
