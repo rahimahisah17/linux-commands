@@ -31,8 +31,8 @@ This repository is organized into sections, with each section covering a specifi
 - [`sort`](03-sorting-processing/README.md) — Sort text alphabetically or numerically.
 - [`uniq`](03-sorting-processing/README.md) — Remove duplicate lines.
 - [`cut`](03-sorting-processing/README.md) — Extract specific columns or fields from text.
-- `tr` — Translate or replace characters. *(Coming Soon)*
-- `tee` — Write output to both the terminal and a file. *(Coming Soon)*
+- [`tr`](03-sorting-processing/README.md) — Translate or replace characters. 
+- [`tee`](03-sorting-processing/README.md) — Write output to both the terminal and a file. 
 
 ### 🚧 Coming Soon
 
@@ -45,4 +45,4 @@ This repository is organized into sections, with each section covering a specifi
 
 ---
 
-**Progress:** **13 commands documented** 
+**Progress:** **18 commands documented** 
