@@ -577,3 +577,4 @@ ls -l | tee files.txt | wc -l
 
 This saves the directory listing to **files.txt** while simultaneously counting the number of lines.
 ```
+
