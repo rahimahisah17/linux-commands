@@ -129,18 +129,18 @@ This command finds every `.log` file and removes it automatically.
 
 > **Be careful** when using `-exec rm`, as deleted files cannot be easily recovered.
 
-# locate Command
+# grep Command
 
 ## Purpose
 
-The **`locate`** command quickly searches for files and directories using a prebuilt database instead of scanning the filesystem in real time, making it much faster than the `find` command.
+The **`grep`** command searches for lines in a file or input that match a specified pattern. It is one of the most frequently used commands for searching logs, configuration files, and command output.
 
 ---
 
 ## Syntax
 
 ```bash
-locate [OPTION]... PATTERN
+grep [OPTION]... PATTERN [FILE]...
 ```
 
 ---
@@ -150,50 +150,62 @@ locate [OPTION]... PATTERN
 | Option | Description |
 |---------|-------------|
 | `-i` | Ignore case distinctions |
-| `-c` | Display only the number of matching entries |
-| `-r` | Search using a regular expression |
+| `-n` | Display line numbers |
+| `-r` | Search recursively through directories |
+| `-v` | Show lines that do **not** match the pattern |
+| `-c` | Display only the number of matching lines |
 
 ---
 
 ## Examples
 
-### Search for a file
+### Search for a word
 
 ```bash
-locate README.md
+grep "Linux" output.txt
 ```
 
-Searches for all files named **README.md**.
+Displays all lines containing **Linux**.
 
 ---
 
-### Case-insensitive search
+### Ignore letter case
 
 ```bash
-locate -i readme
+grep -i "linux" output.txt
 ```
 
-Searches regardless of uppercase or lowercase letters.
+Matches **Linux**, **LINUX**, **linux**, and similar variations.
 
 ---
 
-### Count matching files
+### Display line numbers
 
 ```bash
-locate -c README.md
+grep -n "Linux" output.txt
 ```
 
-Displays only the total number of matching files.
+Shows matching lines together with their line numbers.
 
 ---
 
-### Search using a regular expression
+### Count matching lines
 
 ```bash
-locate -r ".*\.png$"
+grep -c "Linux" output.txt
 ```
 
-Searches for files ending with `.png`.
+Displays the total number of matching lines.
+
+---
+
+### Display non-matching lines
+
+```bash
+grep -v "Linux" output.txt
+```
+
+Shows every line **except** those containing **Linux**.
 
 ---
 
@@ -201,42 +213,47 @@ Searches for files ending with `.png`.
 
 See the screenshot below.
 
-![locate command demonstration](../images/locate-command.png)
+![grep command demonstration](../images/grep-command.png)
 
 ---
 
 ## Real-World Use Cases
 
-- Locate files instantly without searching the entire filesystem.
-- Find configuration files.
-- Search for documents, images, or scripts.
-- Quickly verify whether a file exists.
+- Search log files for errors.
+- Find configuration settings.
+- Filter command output.
+- Search source code for keywords.
+- Analyze application logs.
 
 ---
 
 ## Key Takeaways
 
-- `locate` is much faster than `find` because it uses a database.
-- Results depend on the database being up to date.
-- Use `updatedb` to refresh the database when necessary.
+- `grep` searches for text patterns.
+- It works with files and piped command output.
+- It supports case-insensitive, recursive, and inverted searches.
+- It is one of the most widely used Linux commands.
 
 ---
 
 ## Common Mistakes
 
-- Expecting newly created files to appear immediately.
-- Forgetting to update the database with `updatedb`.
-- Assuming `locate` searches the filesystem in real time.
+- Forgetting quotation marks around patterns containing spaces.
+- Using `grep` without considering case sensitivity.
+- Searching the wrong file or directory.
 
 ---
 
 ## 💡 Pro Tip
 
-If a file isn't found but you're sure it exists, update the database first:
+`grep` becomes even more powerful when combined with pipes.
+
+Example:
 
 ```bash
-sudo updatedb
+ps aux | grep nginx
 ```
 
-Then run your `locate` command again.
+This searches the running processes for **nginx**.
+```
 
