@@ -34,6 +34,15 @@ This repository is organized into sections, with each section covering a specifi
 - [`tr`](03-sorting-processing/README.md) — Translate or replace characters. 
 - [`tee`](03-sorting-processing/README.md) — Write output to both the terminal and a file. 
 
+## 📂 04. Searching & Filtering
+
+- [`find`](04-searching-filtering/find.md) — Search for files and directories.
+- `locate` — Find files quickly using a database.
+- `grep` — Search for text patterns in files.
+- `which` — Locate the executable of a command.
+- `whereis` — Find a command's binary, source, and manual pages.
+
+---
 ### 🚧 Coming Soon
 
 - **04. Searching & Filtering** — `find`, `locate`, `grep`, `which`, `whereis`
