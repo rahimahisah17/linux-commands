@@ -37,15 +37,14 @@ This repository is organized into sections, with each section covering a specifi
 ## 📂 04. Searching & Filtering
 
 - [`find`](04-searching-filtering/README.md) — Search for files and directories.
-- `locate` — Find files quickly using a database.
-- `grep` — Search for text patterns in files.
-- `which` — Locate the executable of a command.
-- `whereis` — Find a command's binary, source, and manual pages.
+- [`locate`](04-searching-filtering/README.md) — Find files quickly using a database.
+- [`grep`](04-searching-filtering/README.md) — Search for text patterns in files.
+- `which` — Locate the executable of a command._(Coming Soon)_
+- `whereis` — Find a command's binary, source, and manual pages._(Coming Soon)_
 
 ---
 ### 🚧 Coming Soon
 
-- **04. Searching & Filtering** — `find`, `locate`, `grep`, `which`, `whereis`
 - **05. Permissions** — `chmod`, `chown`, `umask`
 - **06. System Information** — `whoami`, `hostname`, `uname`, `df`, `du`, `free`, `uptime`
 - **07. Process Management** — `ps`, `top`, `kill`, `pkill`, `jobs`, `bg`, `fg`
@@ -54,4 +53,4 @@ This repository is organized into sections, with each section covering a specifi
 
 ---
 
-**Progress:** **18 commands documented** 
+**Progress:** **21 commands documented** 
