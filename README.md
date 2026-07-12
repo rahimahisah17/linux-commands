@@ -36,7 +36,7 @@ This repository is organized into sections, with each section covering a specifi
 
 ## 📂 04. Searching & Filtering
 
-- [`find`](04-searching-filtering/find.md) — Search for files and directories.
+- [`find`](04-searching-filtering/READ.md) — Search for files and directories.
 - `locate` — Find files quickly using a database.
 - `grep` — Search for text patterns in files.
 - `which` — Locate the executable of a command.
