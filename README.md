@@ -83,3 +83,7 @@ _If the commands return version information, you're ready to begin_.
 ---
 
 **Progress:** **23 commands documented** 
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
