@@ -4,11 +4,11 @@ This section covers Linux commands used to locate files, search for text, and id
 
 ## Commands Covered
 
-- `find` — Search for files and directories.
-- `locate`(locate.md) — Find files quickly using a database.
-- `grep` — Search for text patterns in files.
-- `which`— Locate the executable of a command.
-- `whereis` — Find a command's binary, source, and manual pages.
+- [`find`](find.md) — Search for files and directories.
+- [`locate`](locate.md) — Find files quickly using a database.
+- [`grep`](grep.md) — Search for text patterns in files.
+- [`which`](which.md) — Locate the executable of a command.
+- [`whereis`](whereis.md) — Find a command's binary, source, and manual pages.
 
 ---
 
@@ -129,18 +129,18 @@ This command finds every `.log` file and removes it automatically.
 
 > **Be careful** when using `-exec rm`, as deleted files cannot be easily recovered.
 
-# grep Command
+# which Command
 
 ## Purpose
 
-The **`grep`** command searches for lines in a file or input that match a specified pattern. It is one of the most frequently used commands for searching logs, configuration files, and command output.
+The **`which`** command locates the executable file of a command by searching the directories listed in the system's `PATH` environment variable.
 
 ---
 
 ## Syntax
 
 ```bash
-grep [OPTION]... PATTERN [FILE]...
+which COMMAND
 ```
 
 ---
@@ -149,63 +149,49 @@ grep [OPTION]... PATTERN [FILE]...
 
 | Option | Description |
 |---------|-------------|
-| `-i` | Ignore case distinctions |
-| `-n` | Display line numbers |
-| `-r` | Search recursively through directories |
-| `-v` | Show lines that do **not** match the pattern |
-| `-c` | Display only the number of matching lines |
+| `-a` | Display all matching executable paths |
 
 ---
 
 ## Examples
 
-### Search for a word
+### Locate the Kubernetes CLI
 
 ```bash
-grep "Linux" output.txt
+which kubectl
 ```
 
-Displays all lines containing **Linux**.
+Displays the location of the Kubernetes CLI.
 
 ---
 
-### Ignore letter case
+### Locate the Azure CLI
 
 ```bash
-grep -i "linux" output.txt
+which az
 ```
 
-Matches **Linux**, **LINUX**, **linux**, and similar variations.
+Displays the location of the Azure CLI.
 
 ---
 
-### Display line numbers
+### Locate Docker
 
 ```bash
-grep -n "Linux" output.txt
+which docker
 ```
 
-Shows matching lines together with their line numbers.
+Displays the location of the Docker executable.
 
 ---
 
-### Count matching lines
+### Show all matching executables
 
 ```bash
-grep -c "Linux" output.txt
+which -a python3
 ```
 
-Displays the total number of matching lines.
-
----
-
-### Display non-matching lines
-
-```bash
-grep -v "Linux" output.txt
-```
-
-Shows every line **except** those containing **Linux**.
+Displays every `python3` executable found in your `PATH`.
 
 ---
 
@@ -213,47 +199,154 @@ Shows every line **except** those containing **Linux**.
 
 See the screenshot below.
 
-![grep command demonstration](../images/grep-command.png)
+![which command demonstration](../images/which-command.png)
 
 ---
 
 ## Real-World Use Cases
 
-- Search log files for errors.
-- Find configuration settings.
-- Filter command output.
-- Search source code for keywords.
-- Analyze application logs.
+- Verify that tools such as **kubectl**, **docker**, or **az** are installed.
+- Identify which executable is being used when multiple versions exist.
+- Troubleshoot PATH-related issues.
 
 ---
 
 ## Key Takeaways
 
-- `grep` searches for text patterns.
-- It works with files and piped command output.
-- It supports case-insensitive, recursive, and inverted searches.
-- It is one of the most widely used Linux commands.
+- `which` searches only executable files.
+- It searches directories listed in the `PATH` environment variable.
+- `-a` displays all matching executables.
 
 ---
 
 ## Common Mistakes
 
-- Forgetting quotation marks around patterns containing spaces.
-- Using `grep` without considering case sensitivity.
-- Searching the wrong file or directory.
+- Using `which` to search for regular files.
+- Assuming a command is installed when it is not in the `PATH`.
+- Forgetting to use `-a` when multiple versions exist.
 
 ---
 
 ## 💡 Pro Tip
 
-`grep` becomes even more powerful when combined with pipes.
+Before troubleshooting a tool, verify its installation first.
 
 Example:
 
 ```bash
-ps aux | grep nginx
+which kubectl
 ```
 
-This searches the running processes for **nginx**.
+If no path is returned, the command is either not installed or not available in your `PATH`.
+
+# whereis Command
+
+## Purpose
+
+The **`whereis`** command locates the binary, source code, and manual pages associated with a command.
+
+---
+
+## Syntax
+
+```bash
+whereis COMMAND
 ```
 
+---
+
+## Common Options
+
+| Option | Description |
+|---------|-------------|
+| `-b` | Search for binary files only |
+| `-m` | Search for manual pages only |
+| `-s` | Search for source files only |
+
+---
+
+## Examples
+
+### Locate the Kubernetes CLI
+
+```bash
+whereis kubectl
+```
+
+Displays the binary and related files for `kubectl`.
+
+---
+
+### Locate the Azure CLI
+
+```bash
+whereis az
+```
+
+Displays the binary location for Azure CLI.
+
+---
+
+### Locate Docker
+
+```bash
+whereis docker
+```
+
+Displays Docker's binary and related files.
+
+---
+
+### Search for binaries only
+
+```bash
+whereis -b python3
+```
+
+Displays only the executable location for Python.
+
+---
+
+## Sample Output
+
+See the screenshot below.
+
+![whereis command demonstration](../images/whereis-command.png)
+
+---
+
+## Real-World Use Cases
+
+- Verify where a command is installed.
+- Locate documentation (man pages).
+- Troubleshoot software installations.
+- Confirm binary locations for DevOps tools.
+
+---
+
+## Key Takeaways
+
+- `whereis` searches for binaries, source files, and manual pages.
+- It is different from `which`, which searches only executables in the `PATH`.
+- Use `-b`, `-m`, or `-s` to narrow the search.
+
+---
+
+## Common Mistakes
+
+- Confusing `whereis` with `which`.
+- Expecting `whereis` to search arbitrary files.
+- Assuming every command has source files installed.
+
+---
+
+## 💡 Pro Tip
+
+Use both commands together when troubleshooting.
+
+```bash
+which kubectl
+whereis kubectl
+```
+
+`which` tells you which executable will run, while `whereis` shows additional related files such as binaries and manual pages.
