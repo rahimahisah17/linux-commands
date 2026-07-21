@@ -10,6 +10,35 @@ The goal of this project is to build a solid foundation in Linux while maintaini
 
 This repository is organized into sections, with each section covering a specific area of Linux. Every command includes its purpose, syntax, examples, real-world use cases, screenshots, and key takeaways.
 
+## 🎯 Who This Repository Is For
+
+- Aspiring DevOps Engineers
+- Cloud Engineers
+- Linux Beginners
+- KCNA Candidates
+- Azure Administrators
+
+## 📋 Prerequisites
+
+Before using this repository, you should have:
+
+- A Linux environment (Ubuntu, WSL, or a Linux VM)
+- Basic familiarity with the terminal
+- A text editor such as VS Code (optional)
+- Git installed (recommended for following along)
+
+### Verify Your Environment
+
+Run the following commands to confirm your setup:
+
+```bash
+uname -a
+git --version
+bash --version
+```
+
+_If the commands return version information, you're ready to begin_.
+
 ### 📁 01. Navigation Commands
 - [`pwd`](01-navigation/README.md) — Display the current working directory.
 - [`ls`](01-navigation/README.md) — List files and directories.
@@ -39,8 +68,8 @@ This repository is organized into sections, with each section covering a specifi
 - [`find`](04-searching-filtering/README.md) — Search for files and directories.
 - [`locate`](04-searching-filtering/README.md) — Find files quickly using a database.
 - [`grep`](04-searching-filtering/README.md) — Search for text patterns in files.
-- `which` — Locate the executable of a command._(Coming Soon)_
-- `whereis` — Find a command's binary, source, and manual pages._(Coming Soon)_
+- [`which`](04-searching-filtering/README.md) — Locate the executable of a command.
+- [`whereis`](04-searching-filtering/README.md) — Find a command's binary, source, and manual pages.
 
 ---
 ### 🚧 Coming Soon
@@ -53,4 +82,4 @@ This repository is organized into sections, with each section covering a specifi
 
 ---
 
-**Progress:** **21 commands documented** 
+**Progress:** **23 commands documented** 
