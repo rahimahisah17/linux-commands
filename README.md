@@ -102,4 +102,6 @@ Contributions are welcome! If you'd like to improve this repository:
 
 Please ensure all documentation is accurate, concise, and includes practical examples where applicable.
 
+Documentation and configuration updates are maintained as part of the project's ongoing development.
+
 
